@@ -53,6 +53,7 @@ module Main =
         interface IDisposable with
             member t.Dispose() = t.output.Dispose()
 
+    /// The internal function for running tests.
     let inline runTestCase (x: ^a) (code: ^a -> Result) (state: Tally) =
         if state.am_ignoring then
             state.ignored <- state.ignored+1
@@ -68,6 +69,7 @@ module Main =
                 state.failed <- state.failed+1
             state
 
+    /// Applies a label to a test.
     let testLabel (label: string) (test: Tally -> Tally) (state: Tally) =
         let backup = state.label
         state.label <- 
