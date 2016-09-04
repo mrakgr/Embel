@@ -53,6 +53,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Embel.fs" />
     <Compile Include="Tests.fs" />
+    <Content Include="license.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
